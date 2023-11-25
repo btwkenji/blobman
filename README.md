@@ -149,12 +149,6 @@ export KV_VIPER_FILE="./config.yaml"
 go build -o blobman .
 ```
 
-### Or
-
-```sh
-go run main.go
-```
-
 ```rust
 usage: ./blobman [<flags>] <command> [<args> ...]
 
@@ -183,34 +177,16 @@ Commands:
 ./blobman migrate up
 ```
 
-- or
-
-```sh
-go run main.go migrate up
-```
-
 - migrate down
 
 ```sh
 ./blobman migrate down
 ```
 
-- or
-
-```sh
-go run main.go migrate down
-```
-
 - run blobman service
 
 ```sh
 ./blobman run service
-```
-
-- or
-
-```sh
-go run main.go run service
 ```
 
 Now you succesfully launched blobman
