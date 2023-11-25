@@ -49,6 +49,10 @@ go mod tidy
 #### Build it
 
 ```sh
+export KV_VIPER_FILE="./config.yaml"
+```
+
+```sh
 go build -o blobman .
 ```
 
