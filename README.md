@@ -1,5 +1,98 @@
 # blobman
 
+## Project structure
+
+```rust
+.
+├── config.yaml
+├── Dockerfile
+├── docs
+│   ├── LICENSE
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── spec
+│   │   ├── components
+│   │   │   ├── parameters
+│   │   │   │   ├── pageLimitParam.yaml
+│   │   │   │   ├── pageNumberParam.yaml
+│   │   │   │   └── sortingParam.yaml
+│   │   │   ├── README.md
+│   │   │   └── schemas
+│   │   │       ├── BlobKey.yaml
+│   │   │       ├── BlobRequest.yaml
+│   │   │       ├── Blob.yaml
+│   │   │       ├── Errors.yaml
+│   │   │       └── OwnerKey.yaml
+│   │   ├── openapi.yaml
+│   │   ├── paths
+│   │   │   ├── blobs@{id}.yaml
+│   │   │   └── blobs.yaml
+│   │   └── README.md
+│   ├── web
+│   │   ├── favicon.png
+│   │   ├── index.hbs
+│   │   ├── index.html
+│   │   └── redoc-config.yaml
+│   ├── web_deploy
+│   │   ├── favicon.png
+│   │   ├── index.hbs
+│   │   ├── index.html
+│   │   ├── openapi.json
+│   │   └── openapi.yaml
+│   └── yarn.lock
+├── generate.sh
+├── go.mod
+├── go.sum
+├── internal
+│   ├── assets
+│   │   ├── main.go
+│   │   └── migrations
+│   │       └── 001_initial.sql
+│   ├── cli
+│   │   ├── main.go
+│   │   └── migrate.go
+│   ├── config
+│   │   └── main.go
+│   ├── data
+│   │   ├── blobs.go
+│   │   ├── owners.go
+│   │   └── postgres
+│   │       ├── blobs.go
+│   │       └── owners.go
+│   └── service
+│       ├── handlers
+│       │   ├── create_blob.go
+│       │   ├── ctx.go
+│       │   ├── delete_blob.go
+│       │   ├── get_blob.go
+│       │   └── get_blobs.go
+│       ├── main.go
+│       ├── requests
+│       │   ├── create_blob.go
+│       │   ├── delete_blob.go
+│       │   ├── get_blob.go
+│       │   └── get_blobs.go
+│       └── router.go
+├── main.go
+├── README.md
+└── resources
+    ├── db.go
+    ├── flag.go
+    ├── included.go
+    ├── model_blob_attributes.go
+    ├── model_blob.go
+    ├── model_blob_relationships.go
+    ├── model_blob_request_attributes.go
+    ├── model_blob_request.go
+    ├── model_blob_request_relationships.go
+    ├── model_details.go
+    ├── model_key.go
+    ├── model_links.go
+    ├── model_relation_collection.go
+    ├── model_relation.go
+    └── model_resource_type.go
+```
+
 ## Installation
 
 ```sh
