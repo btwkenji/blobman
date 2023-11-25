@@ -1,0 +1,5 @@
+type: object
+properties:
+  id:
+    type: string
+    example: 31310a7e-22ec-4ad7-bfee-90b48984241d

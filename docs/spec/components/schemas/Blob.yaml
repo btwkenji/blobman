@@ -1,0 +1,29 @@
+allOf:
+  - $ref: '#/components/schemas/BlobKey'
+  - type: object
+    required:
+      - attributes
+      - relationships
+    properties:
+      attributes:
+        type: object
+        properties:
+          value:
+            description: Arbitrary text
+            type: object
+            format: json.RawMessage
+            example: "こんにちは、坂本です。 私はワイフと一緒にアニメの世界に住んでいます（異世界）"
+        required:
+          - value
+      relationships:
+        type: object
+        required:
+          - owner
+        properties:
+          owner:
+            description: Owner of the blob
+            type: string
+            properties:
+              data:
+                type: object
+            $ref: '#/components/schemas/OwnerKey'

@@ -1,0 +1,106 @@
+post:
+  tags:
+    - Blob
+  summary: Blob
+  description: "Create blob\n\n**Required: root signature**"
+  operationId: createBlob
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                required: true
+                $ref: '#/components/schemas/Blob'
+    '401':
+      description: Operation cannot be performed
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+    '500':
+      description: Internal server error
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - data
+          properties:
+            data:
+              type: object
+              required: true
+              $ref: '#/components/schemas/BlobRequest'
+      application/xml:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              required: true
+              $ref: '#/components/schemas/BlobRequest'
+    required: true
+
+get:
+  tags:
+    - Blob
+  summary: Get list of blobs
+  operationId: getBlobsList
+  parameters:
+    - $ref: '#/components/parameters/pageNumberParam'
+    - $ref: '#/components/parameters/pageLimitParam'
+    - $ref: '#/components/parameters/sortingParam'
+    - in: query
+      name: 'filter[value]'
+      required: false
+      schema:
+        description: arbitrary text
+        type: object
+        format: json.RawMessage
+        example: EXAMPLE_HERE
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Blob'
+              links:
+                type: object
+                description: Links for pagination
+                properties:
+                  next:
+                    type: string
+                    required: true
+                    description: Link to the next page
+                  self:
+                    type: string
+                    required: true
+                    description: Link to the current page
+
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+    '500':
+      description: Internal server error
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'

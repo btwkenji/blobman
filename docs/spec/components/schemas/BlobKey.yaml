@@ -1,0 +1,23 @@
+type: object
+required:
+  - id
+  - type
+properties:
+  id:
+    type: string
+    example: d8b4f2db-ab01-47eb-b5d4-d63fb725ac0f
+  type:
+    type: string
+    description: Blob type
+    example: some_option
+    enum:
+      - option1
+      - option2
+      - option3
+      - option4
+      - option5
+      - option6
+      - option7
+      - option8
+      - option9
+      - option10

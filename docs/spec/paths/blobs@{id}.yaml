@@ -1,0 +1,68 @@
+parameters:
+  - name: blob
+    in: path
+    description: Blob Id
+    required: true
+    schema:
+      type: string
+get:
+  tags:
+    - Blob
+  summary: Blob
+  description: "**Required: root signature**"
+  operationId: getBlob
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/Blob'
+    '400':
+      description: Invalid request
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+    '404':
+      description: Not found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+    '500':
+      description: Internal server error
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+delete:
+  tags:
+    - Blob
+  summary: Remove Blob
+  description: "**Required: root signature**"
+  operationId: deleteBlob
+  responses:
+    '204':
+      description: Deleted successfully
+    '400':
+      description: Invalid data
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+    '404':
+      description: Not found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
+    '500':
+      description: Internal server error
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: '#/components/schemas/Errors'
