@@ -51,7 +51,7 @@ get:
     - $ref: '#/components/parameters/pageLimitParam'
     - $ref: '#/components/parameters/sortingParam'
     - in: query
-      name: 'filter[value]'
+      name: 'filter[owner]'
       required: false
       schema:
         description: arbitrary text
