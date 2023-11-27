@@ -12,6 +12,12 @@ node_modules/
 dist/
 coverage/
 *.log
+*.exe
+*.bin
+*.dll
+*.so
+*.dylib
+*.log
 *.log.*
 config.*.yaml
 docs/node_modules
