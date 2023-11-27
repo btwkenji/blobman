@@ -26,4 +26,4 @@ allOf:
             properties:
               data:
                 type: object
-            $ref: '#/components/schemas/OwnerKey'
+                $ref: '#/components/schemas/OwnerKey'
