@@ -28,13 +28,10 @@ func (b *OwnersDB) CreateOwner(ownerID string) error {
 }
 
 func (b *OwnersDB) Exists(id string) error {
-	var result data.Owner
-	statement := squirrel.Select("*").From(ownersTableName).Where("id = ?", id)
-	err := b.db.Get(&result, statement)
-	if err != nil {
-		return err
-	}
-	return nil
+	statement := squirrel.Select("id").From(ownersTableName).Where(squirrel.Eq{"id": id})
+	var ownerID string
+	err := b.db.Get(&ownerID, statement)
+	return err
 }
 
 func (b *OwnersDB) New() data.Owners {
