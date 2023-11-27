@@ -1,17 +1,18 @@
 package postgres
 
 import (
+	"math"
+
 	"github.com/Masterminds/squirrel"
 	"github.com/kenjitheman/blobman/internal/data"
 	"gitlab.com/distributed_lab/kit/pgdb"
-	"math"
 )
 
 const blobsTableName = "blobs"
 
 type BlobsDB struct {
 	db  *pgdb.DB
-	sql squirrel.Sqlizer
+	sql squirrel.SelectBuilder
 }
 
 func NewBlobs(db *pgdb.DB) data.Blobs {
@@ -33,7 +34,7 @@ func (b *BlobsDB) GetBlobById(id string) (*data.Blob, error) {
 }
 
 func (b *BlobsDB) CreateBlob(blob *data.Blob, owner data.Owner) error {
-	b.sql = squirrel.Insert(blobsTableName).SetMap(map[string]interface{}{
+	b.sql = squirrel.Insert (blobsTableName).SetMap(map[string]interface{}{
 		"id":       blob.ID,
 		"owner_id": owner.ID,
 		"value":    blob.Value,
@@ -48,7 +49,8 @@ func (b *BlobsDB) DeleteBlob(id string) error {
 
 func (b *BlobsDB) GetTotalPages(limit uint64) (uint64, error) {
 	var res []data.Blob
-	err := b.db.Select(&res, b.sql.(squirrel.SelectBuilder))
+	b.sql = squirrel.Select("*").From(blobsTableName)
+	err := b.db.Select(&res, b.sql)
 	if err != nil {
 		return 0, err
 	}
@@ -56,13 +58,13 @@ func (b *BlobsDB) GetTotalPages(limit uint64) (uint64, error) {
 }
 
 func (b *BlobsDB) GetPage(pageParams pgdb.OffsetPageParams) data.Blobs {
-	b.sql = pageParams.ApplyTo(b.sql.(squirrel.SelectBuilder), "id")
+	b.sql = pageParams.ApplyTo(b.sql, "id")
 	return b
 }
 
 func (b *BlobsDB) GetBlobsList() ([]data.Blob, error) {
 	var result []data.Blob
-	b.sql = squirrel.Select("*").FromSelect(b.sql.(squirrel.SelectBuilder), "blobs_by_page")
+	b.sql = squirrel.Select("*").FromSelect(b.sql, "blobs_by_page")
 	err := b.db.Select(&result, b.sql)
 	return result, err
 }
