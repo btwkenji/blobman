@@ -40,15 +40,6 @@ post:
               type: object
               required: true
               $ref: '#/components/schemas/BlobRequest'
-      application/xml:
-        schema:
-          type: object
-          properties:
-            data:
-              type: object
-              required: true
-              $ref: '#/components/schemas/BlobRequest'
-    required: true
 
 get:
   tags:
