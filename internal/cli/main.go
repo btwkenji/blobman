@@ -40,10 +40,13 @@ func Run(args []string) bool {
 
 	switch cmd {
 	case serviceCmd.FullCommand():
+		log.Info("-> running service...")
 		service.Run(cfg)
 	case migrateUpCmd.FullCommand():
+		log.Info("-> running migrate up...")
 		err = MigrateUp(cfg)
 	case migrateDownCmd.FullCommand():
+		log.Info("-> running migrate down...")
 		err = MigrateDown(cfg)
 		// handle any custom commands here in the same way
 	default:
@@ -54,5 +57,6 @@ func Run(args []string) bool {
 		log.WithError(err).Error("failed to exec cmd")
 		return false
 	}
+
 	return true
 }
