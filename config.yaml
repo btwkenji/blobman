@@ -1,11 +1,12 @@
 log:
+  level: debug
   disable_sentry: true
 
 db:
   url: postgres://test:test@localhost:25432/blobs?sslmode=disable
 
 listener:
-  addr: localhost:18080
+  addr: :8089
 
 cop:
   disabled: true
@@ -13,3 +14,14 @@ cop:
   upstream: "http://..."
   service_name: blobman
   service_port: 80
+
+horizon:
+  endpoint: http://localhost:8000
+
+keys:
+  source: GBA4EX43M25UPV4WIE6RRMQOFTWXZZRIPFAI5VPY6Z2ZVVXVWZ6NEOOB
+  signer: SAMJKTZVW5UOHCDK5INYJNORF2HRKYI72M5XSZCBYAHQHR34FFR4Z6G4
+
+
+key_value:
+  account_role: "account_role:unverified"
