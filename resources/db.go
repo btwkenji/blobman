@@ -7,6 +7,7 @@ package resources
 import (
 	"database/sql/driver"
 	"encoding/json"
+
 	"gitlab.com/distributed_lab/logan/v3/errors"
 )
 
