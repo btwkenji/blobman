@@ -3,7 +3,8 @@
 ## Project structure
 
 ```rust
-.
+blobman
+│
 ├── config.yaml
 ├── Dockerfile
 ├── docs
