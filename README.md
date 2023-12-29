@@ -317,4 +317,4 @@ DELETE http://localhost:18080/integrations/blobman/blobs/{id}
 
 ## License
 
-- [MIT](https://choosealicense.com/licenses/mit/)
+- [MIT](./LICENSE)
