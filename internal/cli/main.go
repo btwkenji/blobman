@@ -5,8 +5,8 @@ import (
 	"gitlab.com/distributed_lab/kit/kv"
 	"gitlab.com/distributed_lab/logan/v3"
 
-	"github.com/kenjitheman/blobman/internal/config"
-	"github.com/kenjitheman/blobman/internal/service"
+	"github.com/btwkenji/blobman/internal/config"
+	"github.com/btwkenji/blobman/internal/service"
 )
 
 func Run(args []string) bool {

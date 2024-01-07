@@ -1,8 +1,8 @@
 package cli
 
 import (
-	"github.com/kenjitheman/blobman/internal/assets"
-	"github.com/kenjitheman/blobman/internal/config"
+	"github.com/btwkenji/blobman/internal/assets"
+	"github.com/btwkenji/blobman/internal/config"
 	migrate "github.com/rubenv/sql-migrate"
 	"gitlab.com/distributed_lab/logan/v3/errors"
 )

@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"github.com/kenjitheman/blobman/internal/data"
-	"github.com/kenjitheman/blobman/internal/service/requests"
-	"github.com/kenjitheman/blobman/resources"
+	"github.com/btwkenji/blobman/internal/data"
+	"github.com/btwkenji/blobman/internal/service/requests"
+	"github.com/btwkenji/blobman/resources"
 	"gitlab.com/distributed_lab/ape"
 	"gitlab.com/distributed_lab/ape/problems"
 	"gitlab.com/distributed_lab/kit/pgdb"

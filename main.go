@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/kenjitheman/blobman/internal/cli"
 	"os"
+	"github.com/btwkenji/blobman/internal/cli"
 )
 
 func main() {

@@ -2,9 +2,9 @@ package service
 
 import (
 	"github.com/go-chi/chi"
-	"github.com/kenjitheman/blobman/internal/config"
-	"github.com/kenjitheman/blobman/internal/data/postgres"
-	"github.com/kenjitheman/blobman/internal/service/handlers"
+	"github.com/btwkenji/blobman/internal/config"
+	"github.com/btwkenji/blobman/internal/data/postgres"
+	"github.com/btwkenji/blobman/internal/service/handlers"
 	"gitlab.com/distributed_lab/ape"
 )
 

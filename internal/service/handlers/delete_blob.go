@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"github.com/kenjitheman/blobman/internal/data"
-	"github.com/kenjitheman/blobman/internal/service/requests"
+	"github.com/btwkenji/blobman/internal/data"
+	"github.com/btwkenji/blobman/internal/service/requests"
 	"gitlab.com/distributed_lab/ape"
 	"gitlab.com/distributed_lab/ape/problems"
 	"net/http"

@@ -1,4 +1,4 @@
-module github.com/kenjitheman/blobman
+module github.com/btwkenji/blobman
 
 go 1.21
 

@@ -5,8 +5,8 @@ import (
 	"errors"
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/google/uuid"
-	"github.com/kenjitheman/blobman/internal/data"
-	"github.com/kenjitheman/blobman/resources"
+	"github.com/btwkenji/blobman/internal/data"
+	"github.com/btwkenji/blobman/resources"
 	"net/http"
 )
 
