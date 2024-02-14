@@ -97,7 +97,7 @@ blobman
 ## Installation
 
 ```sh
-git clone https://github.com/btwkenji/blobman
+git clone https://github.com/kenjitheman/blobman
 ```
 
 ## Usage

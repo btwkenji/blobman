@@ -2,7 +2,7 @@ package main
 
 import (
 	"os"
-	"github.com/btwkenji/blobman/internal/cli"
+	"github.com/kenjitheman/blobman/internal/cli"
 )
 
 func main() {

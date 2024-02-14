@@ -2,7 +2,7 @@ package postgres
 
 import (
 	"github.com/Masterminds/squirrel"
-	"github.com/btwkenji/blobman/internal/data"
+	"github.com/kenjitheman/blobman/internal/data"
 	"gitlab.com/distributed_lab/kit/pgdb"
 	"math"
 )
